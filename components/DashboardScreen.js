@@ -37,22 +37,30 @@ export default function DashboardScreen({ setIsLoggedIn, storage }) {
       <Text style={styles.name}>{item.name}</Text>
     </View>
   );
-
   return (
-    <View style={styles.container}>
+  <View style={styles.container}>
+    <View style={styles.topBar}>
       <Text style={styles.header}>Pokémon Dashboard</Text>
-      <FlatList
-        data={data}
-        keyExtractor={(item) => item.name}
-        renderItem={renderItem}
-        contentContainerStyle={styles.list}
-      />
       <Button title="Logout" onPress={logout} />
     </View>
-  );
+
+    <FlatList
+      data={data}
+      keyExtractor={(item) => item.name}
+      renderItem={renderItem}
+      contentContainerStyle={styles.list}
+    />
+  </View>
+);
 }
 
 const styles = StyleSheet.create({
+    topBar: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  marginBottom: 20,
+},
   container: { flex: 1, padding: 20, paddingTop: 50 },
   header: { fontSize: 22, textAlign: 'center', marginBottom: 20 },
   list: { paddingBottom: 20 },

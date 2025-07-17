@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <title>React Native Web</title>
+    <style>
+      html, body, #app-root {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        font-family: sans-serif;
+        background-color: #f0f0f0; /* fallback before JS loads */
+      }
+    </style>
   </head>
   <body>
     <div id="app-root"></div>

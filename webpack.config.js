@@ -31,5 +31,10 @@ module.exports = {
   devServer: {
     static: './public',
     port: 3000,
+    host: '0.0.0.0',               //Accept connections from external hosts
+  allowedHosts: 'all',           // Let ngrok and others connect with {port}
+  headers: {
+    'Access-Control-Allow-Origin': '*',  //Give access to all origins
+  },
   },
 };
